@@ -1,40 +1,28 @@
-import React {useState} from "react";
+import { useState } from "react";
+import type { Cocktail } from "../App";
 
-interface cocktailsProps{
-    name: string;
-    image: string;
-    ingredients: string;
-    isFavorite:boolean;
-    addedToCart: boolean;
+interface CocktailCardProps {
+  cocktail: Cocktail;
 }
 
-interface CocktailCard{
-    cocktails: cocktailsProps;
+function CocktailCard({ cocktail }: CocktailCardProps) {
+  const [isFavorite, setIsFavorite] = useState(cocktail.isFavorite);
+
+  function handleClickFavorite() {
+    setIsFavorite(!isFavorite);
+  }
+
+  return (
+    <>
+      <h2>{cocktail.name}</h2>
+      <img src="/assets/images/canaille.png" alt={cocktail.name} />
+      <p>{cocktail.ingredients}</p>
+      <button type="button" onClick={handleClickFavorite}>
+        {isFavorite ? "❤️" : "🖤"}
+      </button>
+      <button type="button" onClick={handleClickFavorite} />
+    </>
+  );
 }
-
-
-function CocktailCard(props)
- {
-    const [isFavorite, setIsFavorite] = useSate(isFavorite);
-
-    function handleClickFavorite () {
-        setIsFavorite(!isFavorite);
-    }
-
-    return (
-        <>
-        <h2>{props.name}</h2>
-        <img src={props.image} alt={props.name}/>
-        <p>{props.ingredients}</p>
-        <button type="button" onClick={handleClickFavorite}>
-            {isFavorite ? "❤️" : "🖤"}
-        </button>
-        <button type="button" onClick={handleClickFavorite}>
-            
-        </>
-    )
-
-}
-
 
 export default CocktailCard;

@@ -1,17 +1,15 @@
-import CocktailCard from "./Components/CocktailCard";
+import type { Cocktail } from "../App";
+import CocktailCard from "./CocktailCard";
 
-function ListeCocktails({ cocktails }) {
+interface ListeCocktailsProps {
+  cocktails: Cocktail[];
+}
+
+function ListeCocktails({ cocktails }: ListeCocktailsProps) {
   return (
     <>
-      {cocktails.map((boisson) => (
-        <CocktailCard
-          key={boisson.id}
-          name={boisson.name}
-          image={boisson.image}
-          ingredients={boisson.ingredients}
-          isFavorite={boisson.isFavorite}
-          addedToCart={boisson.addedToCart}
-        />
+      {cocktails.map((boisson: Cocktail) => (
+        <CocktailCard key={boisson.id} cocktail={boisson} />
       ))}
     </>
   );

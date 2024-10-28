@@ -1,13 +1,20 @@
 import "./App.css";
 import ListeCocktails from "./Components/ListeCocktails";
 
-Interface cocktails
+export interface Cocktail {
+  id: number;
+  name: string;
+  image: string;
+  ingredients: string;
+  isFavorite: boolean;
+  addedToCart: boolean;
+}
 
-const cocktails = [
+const cocktails: Cocktail[] = [
   {
     id: 1,
     name: "Mojito",
-    image: "./assets/images/mojito.png",
+    image: "../images/mojito.png",
     ingredients: "Eau gazeuse, citron vert, menthe fraîche, sucre",
     isFavorite: false,
     addedToCart: false,
@@ -15,7 +22,7 @@ const cocktails = [
   {
     id: 2,
     name: "Tequila Sunrise",
-    image: "./assets/images/tequila_sunrise.png",
+    image: "../images/tequila_sunrise.png",
     ingredients: "Tequila, jus d'orange, sirop de grenadine",
     isFavorite: false,
     addedToCart: false,
@@ -23,7 +30,7 @@ const cocktails = [
   {
     id: 3,
     name: "Canaille",
-    image: "./assets/images/canaille.png",
+    image: "../images/canaille.png",
     ingredients: "Vodka, ginger beer, citron, sirop de sureau",
     isFavorite: false,
     addedToCart: false,
@@ -31,7 +38,7 @@ const cocktails = [
   {
     id: 4,
     name: "Daiquiri",
-    image: "./assets/images/daiquiri.png",
+    image: "../images/daiquiri.png",
     ingredients: "Rhum passion,jus de cirton vert, sirop de sucre",
     isFavorite: false,
     addedToCart: false,
@@ -39,7 +46,7 @@ const cocktails = [
   {
     id: 5,
     name: "Sex on the beach",
-    image: "./assets/images/sex-on-the-beach.png",
+    image: "../images/sex-on-the-beach.png",
     ingredients: "Vodka, liqueur de pêche, jus d'orange, jus d'ananas",
     isFavorite: false,
     addedToCart: false,
@@ -53,13 +60,7 @@ function App() {
         <h1>Cocktails [2SLN]</h1>
       </header>
       <main>
-        <ListeCocktails 
-        mojito={cocktails[0]}
-        tequila={cocktails[1]}
-        canaille={cocktails[2]}
-        daikiri={cocktails[3]}
-        sexOnTheBeach={cocktails[4]}
-         />
+        <ListeCocktails cocktails={cocktails} />
       </main>
     </>
   );
