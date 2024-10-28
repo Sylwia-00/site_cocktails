@@ -1,6 +1,8 @@
 import "./App.css";
 import ListeCocktails from "./Components/ListeCocktails";
 
+Interface cocktails
+
 const cocktails = [
   {
     id: 1,
@@ -51,7 +53,13 @@ function App() {
         <h1>Cocktails [2SLN]</h1>
       </header>
       <main>
-        <ListeCocktails cocktails={cocktails} />
+        <ListeCocktails 
+        mojito={cocktails[0]}
+        tequila={cocktails[1]}
+        canaille={cocktails[2]}
+        daikiri={cocktails[3]}
+        sexOnTheBeach={cocktails[4]}
+         />
       </main>
     </>
   );
