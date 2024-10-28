@@ -1,4 +1,5 @@
 import "./App.css";
+import ListeCocktails from "./Components/ListeCocktails";
 
 const cocktails = [
   {
@@ -50,7 +51,7 @@ function App() {
         <h1>Cocktails [2SLN]</h1>
       </header>
       <main>
-        <h2>Blabla</h2>
+        <ListeCocktails cocktails={cocktails} />
       </main>
     </>
   );
