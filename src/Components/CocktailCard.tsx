@@ -19,9 +19,9 @@ function CocktailCard({ cocktail }: CocktailCardProps) {
   }
 
   return (
-    <article>
+    <article className="bordure_article">
       <h2>{cocktail.name}</h2>
-      <img src={cocktail.image} alt={cocktail.name} />
+      <img src={cocktail.image} alt={cocktail.name} className="images"/>
       <p>{cocktail.ingredients}</p>
       <button type="button" onClick={handleClickFavorite}>
         {isFavorite ? "❤️" : "🖤"}
