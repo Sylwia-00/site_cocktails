@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "./App.css";
 import ListeCocktails from "./Components/ListeCocktails";
+import ResumePanier from "./Components/ResumePanier";
 
 export interface Cocktail {
   id: number;
@@ -7,7 +9,7 @@ export interface Cocktail {
   image: string;
   ingredients: string;
   isFavorite: boolean;
-  addedToCart: boolean;
+  addedToCart: number;
 }
 
 const cocktails: Cocktail[] = [
@@ -17,7 +19,7 @@ const cocktails: Cocktail[] = [
     image: "./src/assets/images/mojito.png",
     ingredients: "Eau gazeuse, citron vert, menthe fraîche, sucre",
     isFavorite: false,
-    addedToCart: false,
+    addedToCart: 0,
   },
   {
     id: 2,
@@ -25,7 +27,7 @@ const cocktails: Cocktail[] = [
     image: "./src/assets/images/tequila_sunrise.png",
     ingredients: "Tequila, jus d'orange, sirop de grenadine",
     isFavorite: false,
-    addedToCart: false,
+    addedToCart: 0,
   },
   {
     id: 3,
@@ -33,7 +35,7 @@ const cocktails: Cocktail[] = [
     image: "./src/assets/images/canaille.png",
     ingredients: "Vodka, ginger beer, citron, sirop de sureau",
     isFavorite: false,
-    addedToCart: false,
+    addedToCart: 0,
   },
   {
     id: 4,
@@ -41,7 +43,7 @@ const cocktails: Cocktail[] = [
     image: "./src/assets/images/daiquiri.png",
     ingredients: "Rhum passion,jus de cirton vert, sirop de sucre",
     isFavorite: false,
-    addedToCart: false,
+    addedToCart: 0,
   },
   {
     id: 5,
@@ -49,20 +51,24 @@ const cocktails: Cocktail[] = [
     image: "./src/assets/images/sex-on-the-beach.png",
     ingredients: "Vodka, liqueur de pêche, jus d'orange, jus d'ananas",
     isFavorite: false,
-    addedToCart: false,
+    addedToCart: 0,
   },
 ];
 
 function App() {
+  // const [cocktailCount, setCocktailCount] = useState(0);
+  // setCocktailCount(() => cocktailCount + 1);
   return (
-    <>
+    <main>
+      <input className="input-panier" type="text" />
       <header>
         <h1>Cocktails [2SLN]</h1>
       </header>
       <main>
         <ListeCocktails cocktails={cocktails} />
+        {/* <ResumePanier cocktailCount={cocktailCount} /> */}
       </main>
-    </>
+    </main>
   );
 }
 

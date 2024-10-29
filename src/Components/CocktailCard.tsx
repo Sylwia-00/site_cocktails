@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Cocktail } from "../App";
+import ResumePanier from "./ResumePanier";
 
 interface CocktailCardProps {
   cocktail: Cocktail;
@@ -7,29 +8,29 @@ interface CocktailCardProps {
 
 function CocktailCard({ cocktail }: CocktailCardProps) {
   const [isFavorite, setIsFavorite] = useState(cocktail.isFavorite);
+  const [cocktailCount, setCocktailCount] = useState(0);
 
   function handleClickFavorite() {
     setIsFavorite(!isFavorite);
   }
 
-  const [ajoutPanier, setAjoutPanier] = useState(cocktail.addedToCart);
-
-  function handleClickCart(){
-    setAjoutPanier(!ajoutPanier);
-
+  function incrementCocktailCount() {
+    setCocktailCount(cocktailCount + 1);
   }
 
   return (
-    <>
+    <article>
       <h2>{cocktail.name}</h2>
       <img src={cocktail.image} alt={cocktail.name} />
       <p>{cocktail.ingredients}</p>
       <button type="button" onClick={handleClickFavorite}>
         {isFavorite ? "❤️" : "🖤"}
       </button>
-      <button type="button" onClick={handleClickCart}>
-        {ajoutPanier ? }
-    </>
+      <button type="button" onClick={incrementCocktailCount}>
+        Ajout au 🧺
+      </button>
+      <ResumePanier cocktailCount={cocktailCount} />
+    </article>
   );
 }
 

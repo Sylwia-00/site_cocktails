@@ -7,11 +7,11 @@ interface ListeCocktailsProps {
 
 function ListeCocktails({ cocktails }: ListeCocktailsProps) {
   return (
-    <>
+    <div>
       {cocktails.map((boisson: Cocktail) => (
         <CocktailCard key={boisson.id} cocktail={boisson} />
       ))}
-    </>
+    </div>
   );
 }
 
