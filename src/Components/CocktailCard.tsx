@@ -15,7 +15,7 @@ function CocktailCard({ cocktail }: CocktailCardProps) {
   return (
     <>
       <h2>{cocktail.name}</h2>
-      <img src="/assets/images/canaille.png" alt={cocktail.name} />
+      <img src={cocktail.image} alt={cocktail.name} />
       <p>{cocktail.ingredients}</p>
       <button type="button" onClick={handleClickFavorite}>
         {isFavorite ? "❤️" : "🖤"}

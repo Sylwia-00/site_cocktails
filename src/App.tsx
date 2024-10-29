@@ -14,7 +14,7 @@ const cocktails: Cocktail[] = [
   {
     id: 1,
     name: "Mojito",
-    image: "../images/mojito.png",
+    image: "./src/assets/images/mojito.png",
     ingredients: "Eau gazeuse, citron vert, menthe fraîche, sucre",
     isFavorite: false,
     addedToCart: false,
@@ -22,7 +22,7 @@ const cocktails: Cocktail[] = [
   {
     id: 2,
     name: "Tequila Sunrise",
-    image: "../images/tequila_sunrise.png",
+    image: "./src/assets/images/tequila_sunrise.png",
     ingredients: "Tequila, jus d'orange, sirop de grenadine",
     isFavorite: false,
     addedToCart: false,
@@ -30,7 +30,7 @@ const cocktails: Cocktail[] = [
   {
     id: 3,
     name: "Canaille",
-    image: "../images/canaille.png",
+    image: "./src/assets/images/canaille.png",
     ingredients: "Vodka, ginger beer, citron, sirop de sureau",
     isFavorite: false,
     addedToCart: false,
@@ -38,7 +38,7 @@ const cocktails: Cocktail[] = [
   {
     id: 4,
     name: "Daiquiri",
-    image: "../images/daiquiri.png",
+    image: "./src/assets/images/daiquiri.png",
     ingredients: "Rhum passion,jus de cirton vert, sirop de sucre",
     isFavorite: false,
     addedToCart: false,
@@ -46,7 +46,7 @@ const cocktails: Cocktail[] = [
   {
     id: 5,
     name: "Sex on the beach",
-    image: "../images/sex-on-the-beach.png",
+    image: "./src/assets/images/sex-on-the-beach.png",
     ingredients: "Vodka, liqueur de pêche, jus d'orange, jus d'ananas",
     isFavorite: false,
     addedToCart: false,
