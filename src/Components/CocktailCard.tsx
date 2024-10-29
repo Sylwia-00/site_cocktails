@@ -12,6 +12,13 @@ function CocktailCard({ cocktail }: CocktailCardProps) {
     setIsFavorite(!isFavorite);
   }
 
+  const [ajoutPanier, setAjoutPanier] = useState(cocktail.addedToCart);
+
+  function handleClickCart(){
+    setAjoutPanier(!ajoutPanier);
+
+  }
+
   return (
     <>
       <h2>{cocktail.name}</h2>
@@ -20,7 +27,8 @@ function CocktailCard({ cocktail }: CocktailCardProps) {
       <button type="button" onClick={handleClickFavorite}>
         {isFavorite ? "❤️" : "🖤"}
       </button>
-      <button type="button" onClick={handleClickFavorite} />
+      <button type="button" onClick={handleClickCart}>
+        {ajoutPanier ? }
     </>
   );
 }
